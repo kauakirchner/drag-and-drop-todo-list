@@ -1,8 +1,9 @@
-function App() {
+import Todo from "./components/pages/Todo"
 
+function App() {
   return (
     <div className="container">
-
+      <Todo />
     </div>
   )
 }
