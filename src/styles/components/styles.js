@@ -5,4 +5,74 @@ const Container = styled.div`
     flex-direction: column;
 `
 
-export { Container }
+const DeleteTodo = styled.button`
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: red;
+    width: 25px;
+    font-size: 15px;
+
+    &&:hover {
+        transform: scale(1.025);
+    }
+`
+const CardText = styled.span`
+    color: #fff;
+    font-size: 14px;
+`
+
+const CardAllTodos = styled.div`
+    width: 300px;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background-color: #111;
+    animation: fade-in-animation;
+    animation-duration: 2.25s;
+`
+
+const AddTodo = styled.button`
+    margin-top: 8px;
+    font-size: 14px;
+    text-shadow: 0px 0px 5px rgb(0, 0, 0, .35);
+    color: #fff;
+    background-color: #287CD0;
+    font-weight: 500;
+    font-size: 14px;
+    text-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
+    transition: 0.3s ease-in-out;
+    border: 1px solid #287CD0;
+    height: 35px;
+    border-radius: 10px;
+    margin-left: 10px;
+
+    &&:hover {
+        transform: scale(1.030);
+        background-color: #288CD0;
+    } 
+`
+const TodoContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+`
+
+const InputField = styled.input`
+    width: 50%;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #287CD0;
+
+    &&:focus {
+        outline: 1px solid #287CD0;
+        transform: scale(1.016);
+    }
+`
+
+export { Container, DeleteTodo, CardAllTodos, CardText, AddTodo, TodoContainer, InputField }

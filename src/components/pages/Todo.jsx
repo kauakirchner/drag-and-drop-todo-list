@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container } from "../../styles/components/styles";
+import { Container, DeleteTodo, CardAllTodos, CardText, AddTodo, TodoContainer, InputField  } from "../../styles/components/styles";
 
 const Todo = () => {
     const [inputValueTodos, setInputValueTodos] = useState('');
@@ -10,6 +10,10 @@ const Todo = () => {
         setInputValueTodos('');
     }
 
+    const sortedTodos = allTodos.sort((x, y) => {
+        return x.value.length - y.value.length
+    })
+
     const removeTodo = (idTodo) => {
         const filteredTodos = allTodos.filter(todo => todo.id !== idTodo);
         setAllTodos(filteredTodos);
@@ -17,22 +21,28 @@ const Todo = () => {
 
     return (
         <Container>
-            <div className="inpt-group">
-                <input type="text" value={inputValueTodos} onChange={event => setInputValueTodos(event.target.value)} />
-                <button onClick={addTodo}>Adicionar</button>
-            </div>
-            {allTodos.length > 0 ? (
-                allTodos.map(todo => (
-                    <Container key={todo.id}>
-                        { todo.value }
-                        <button onClick={() => removeTodo(todo.id)}>X</button>
+            <CardAllTodos>
+                <div className="inpt-group">
+                    <InputField type="text" value={inputValueTodos} onChange={event => setInputValueTodos(event.target.value)} />
+                    <AddTodo onClick={addTodo}>ADICIONAR</AddTodo>
+                </div>
+                {sortedTodos.length > 0 ? (
+                    sortedTodos.map(todo => (
+                        <Container key={todo.id}>
+                            <TodoContainer>
+                                <CardText>{ todo.value }</CardText> 
+                                <DeleteTodo onClick={() => removeTodo(todo.id)}>X</DeleteTodo>
+                            </TodoContainer>
+                        </Container>
+                    ))
+                ) : (
+                    <Container>
+                        <CardText>
+                            Não há todos cadastrados
+                        </CardText>
                     </Container>
-                ))
-            ) : (
-                <Container>
-                    Não há todos cadastrados
-                </Container>
-            )}
+                )}
+            </CardAllTodos>
         </Container>
     )
 }
