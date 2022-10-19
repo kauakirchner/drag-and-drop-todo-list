@@ -37,12 +37,7 @@ const Todo = () => {
     }
     const toOriginalSort = () => {
         console.log(allTodos)
-        const sortedTodos = allTodos.sort((x, y) => {
-            if(x < y) {
-                return true;
-            }
-            return -1;
-        });
+        const sortedTodos = allTodos.sort((x, y) => x.id - y.id);
         setAllTodos(sortedTodos);
         console.log(sortedTodos);
     }
