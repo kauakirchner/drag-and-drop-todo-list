@@ -17,7 +17,16 @@ const DeleteTodo = styled.button`
         transform: scale(1.025);
     }
 `
-const CardText = styled.span`
+const HeaderText = styled.th`
+    color: #fff;
+    font-size: 14px;
+
+    &&:hover {
+        cursor: pointer;
+        transform: scale(1.025);
+    }
+`
+const BodyText = styled.td`
     color: #fff;
     font-size: 14px;
 `
@@ -46,7 +55,7 @@ const AddTodo = styled.button`
     text-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
     transition: 0.3s ease-in-out;
     border: 1px solid #287CD0;
-    height: 35px;
+    height: 25px;
     border-radius: 10px;
     margin-left: 10px;
 
@@ -75,4 +84,4 @@ const InputField = styled.input`
     }
 `
 
-export { Container, DeleteTodo, CardAllTodos, CardText, AddTodo, TodoContainer, InputField }
+export { Container, DeleteTodo, CardAllTodos, HeaderText, BodyText, AddTodo, TodoContainer, InputField }
