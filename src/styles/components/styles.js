@@ -12,6 +12,7 @@ const DeleteTodo = styled.button`
     background-color: red;
     width: 25px;
     font-size: 15px;
+    font-weight: bold;
 
     &&:hover {
         transform: scale(1.025);
@@ -20,6 +21,7 @@ const DeleteTodo = styled.button`
 const HeaderText = styled.th`
     color: #fff;
     font-size: 14px;
+    font-weight: bold;
 
     &&:hover {
         cursor: pointer;
@@ -50,7 +52,7 @@ const AddTodo = styled.button`
     text-shadow: 0px 0px 5px rgb(0, 0, 0, .35);
     color: #fff;
     background-color: #287CD0;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14px;
     text-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
     transition: 0.3s ease-in-out;

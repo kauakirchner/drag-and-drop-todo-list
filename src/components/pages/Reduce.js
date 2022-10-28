@@ -1,5 +1,4 @@
 const meuReduce = (callBack, initialValue, arrayInicial) => {
-    debugger
     let currentPreviousValue = initialValue;
 
     arrayInicial.forEach(element => {
@@ -10,5 +9,3 @@ const meuReduce = (callBack, initialValue, arrayInicial) => {
 }
 
 export { meuReduce }
-
-// prevValue, currentValue: vai retornar sempre o novo prevValue 

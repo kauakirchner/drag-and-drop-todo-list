@@ -15,7 +15,7 @@ const Todo = () => {
         setAllTodos(filteredTodos);
     }
     const handleSortTodos = () => {
-        setclickInTodoCount(prevState => prevState + 1);
+        setclickInTodoCount(prevState => prevState + 1); 
         if(clickInTodoCount === 1) {
             const sortedTodos = allTodos.sort((x, y) => {
                 if(x.value < y.value) {
@@ -36,12 +36,13 @@ const Todo = () => {
         }
     }
     const toOriginalSort = () => {
-        console.log(allTodos)
-        const sortedTodos = allTodos.sort((x, y) => x.id - y.id);
-        setAllTodos(sortedTodos);
-        console.log(sortedTodos);
+        setclickInTodoCount(prevState => prevState + 1); 
+        if(clickInTodoCount >= 1) {
+            const sortedTodos = allTodos.sort((x, y) => x.id - y.id);
+            setAllTodos(sortedTodos);
+        }
     }
-    
+
     return (
         <Container>
             <CardAllTodos>
@@ -52,14 +53,14 @@ const Todo = () => {
                 <table>
                     <thead>
                         <tr>
-                            <HeaderText onClick={handleSortTodos}>Todo</HeaderText>
-                            <HeaderText onClick={toOriginalSort}>Id</HeaderText>
+                            <HeaderText onClick={ handleSortTodos }>Todo</HeaderText>
+                            <HeaderText onClick={ toOriginalSort }>Id</HeaderText>
                         </tr>
                     </thead>
                     <tbody>
                         {allTodos.length > 0 ? (
                             allTodos.map(todo => (
-                                <tr key={todo.id}>
+                                <tr key={ todo.id }>
                                     <TodoContainer>
                                         <td>
                                             <BodyText>{ todo.value }</BodyText>
