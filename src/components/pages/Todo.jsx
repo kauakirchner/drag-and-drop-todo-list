@@ -5,6 +5,9 @@ const Todo = () => {
     const [inputValueTodos, setInputValueTodos] = useState('');
     const [allTodos, setAllTodos] = useState([]);
     const [clickInTodoCount, setclickInTodoCount] = useState(1);
+    const [inputValueSearch, setInputValueSearch] = useState('');
+
+    const filteredTodos = allTodos.filter(todo => todo.value.toLowerCase().includes(inputValueSearch.toLowerCase()));
 
     const addTodo = () => {
         setAllTodos([...allTodos,{value: inputValueTodos, id: new Date().valueOf()}]);
@@ -46,6 +49,9 @@ const Todo = () => {
     return (
         <Container>
             <CardAllTodos>
+                <div className="search">
+                    <InputField type="text" placeholder="Filtrar Todos" value={inputValueSearch} onChange={event => setInputValueSearch(event.target.value)} />
+                </div>
                 <div className="inpt-group">
                     <InputField type="text" value={inputValueTodos} onChange={event => setInputValueTodos(event.target.value)} />
                     <AddTodo onClick={addTodo}>ADICIONAR</AddTodo>
@@ -58,8 +64,8 @@ const Todo = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {allTodos.length > 0 ? (
-                            allTodos.map(todo => (
+                        {inputValueSearch.length > 0 ? (
+                            filteredTodos.map(todo => (
                                 <tr key={ todo.id }>
                                     <TodoContainer>
                                         <td>
@@ -72,11 +78,18 @@ const Todo = () => {
                                 </tr>
                             ))
                         ) : (
-                            <Container>
-                                <BodyText>
-                                    Não há todos cadastrados
-                                </BodyText>
-                            </Container>
+                            allTodos.map(todo => (
+                                <tr key={ todo.id }>
+                                    <TodoContainer>
+                                        <td>
+                                            <BodyText>{ todo.value }</BodyText>
+                                        </td>
+                                        <td>
+                                            <DeleteTodo onClick={() => removeTodo(todo.id)}>X</DeleteTodo>
+                                        </td>
+                                    </TodoContainer>
+                                </tr>
+                            ))
                         )}
                     </tbody>
                 </table>
