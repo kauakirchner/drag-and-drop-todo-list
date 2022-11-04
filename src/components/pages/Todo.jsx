@@ -10,7 +10,7 @@ const Todo = () => {
     const filteredTodos = allTodos.filter(todo => todo.value.toLowerCase().includes(inputValueSearch.toLowerCase()));
 
     const addTodo = () => {
-        setAllTodos([...allTodos,{value: inputValueTodos, id: new Date().valueOf()}]);
+        setAllTodos([...allTodos,{value: inputValueTodos, id: setTimeout(() => new Date().valueOf(),1000)}]);
         setInputValueTodos('');
     }
     const removeTodo = (idTodo) => {
