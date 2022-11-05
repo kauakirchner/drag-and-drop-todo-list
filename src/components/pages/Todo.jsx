@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, DeleteTodo, CardAllTodos, HeaderText, BodyText, AddTodo, TodoContainer, InputField  } from "../../styles/components/styles";
-
+import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 const Todo = () => {
     const [inputValueTodos, setInputValueTodos] = useState('');
     const [allTodos, setAllTodos] = useState([]);
