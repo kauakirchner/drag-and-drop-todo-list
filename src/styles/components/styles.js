@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
 `
 
-const DeleteTodo = styled.button`
+export const DeleteTodo = styled.button`
     border: none;
     border-radius: 20px;
     color: #fff;
@@ -18,7 +18,7 @@ const DeleteTodo = styled.button`
         transform: scale(1.025);
     }
 `
-const HeaderText = styled.th`
+export const HeaderText = styled.th`
     color: #fff;
     font-size: 14px;
     font-weight: bold;
@@ -28,12 +28,12 @@ const HeaderText = styled.th`
         transform: scale(1.025);
     }
 `
-const BodyText = styled.td`
+export const BodyText = styled.td`
     color: #fff;
     font-size: 14px;
 `
 
-const CardAllTodos = styled.div`
+export const CardAllTodos = styled.div`
     width: 300px;
     max-width: 100%;
     max-height: 100%;
@@ -46,7 +46,7 @@ const CardAllTodos = styled.div`
     animation-duration: 2.25s;
 `
 
-const AddTodo = styled.button`
+export const AddTodo = styled.button`
     margin-top: 8px;
     font-size: 14px;
     text-shadow: 0px 0px 5px rgb(0, 0, 0, .35);
@@ -66,7 +66,7 @@ const AddTodo = styled.button`
         background-color: #288CD0;
     } 
 `
-const TodoContainer = styled.div`
+export const TodoContainer = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -74,8 +74,8 @@ const TodoContainer = styled.div`
     padding: 10px 10px;
 `
 
-const InputField = styled.input`
-    width: 50%;
+export const InputField = styled.input`
+    width: 60%;
     height: 20px;
     border-radius: 10px;
     border: 1px solid #287CD0;
@@ -86,4 +86,19 @@ const InputField = styled.input`
     }
 `
 
-export { Container, DeleteTodo, CardAllTodos, HeaderText, BodyText, AddTodo, TodoContainer, InputField }
+export const StyledTable = styled.table`
+    color: white;
+`
+
+export const InputSearch = styled.input`
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #287CD0;
+
+    &&:focus {
+        outline: 1px solid #287CD0;
+        transform: scale(1.016);
+    }
+
+`
